@@ -17,7 +17,7 @@ class LoginViewModel {
     var responseError : BehaviorRelay<String> = BehaviorRelay(value: "")
     var inputId : BehaviorRelay<String?> = BehaviorRelay<String?>(value: nil)
     var inputPhoneNum : BehaviorRelay<String?> = BehaviorRelay<String?>(value: nil)
-    private final let enCodeNumber : Int = 71087008440
+    private final let enCodeNumber : Int = 0
     
     var idTextCheck : Bool {
         if let idText = inputId.value {
@@ -66,7 +66,7 @@ class LoginViewModel {
 
     var encodePhoneNumber: String {
         if let encodePhoneNumber = Int(inputPhoneNum.value!) {
-            return "PMS\(encodePhoneNumber + enCodeNumber)"
+            return "\(encodePhoneNumber + enCodeNumber)"
         }
         return ""
     }
